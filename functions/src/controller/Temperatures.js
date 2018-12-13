@@ -40,7 +40,7 @@ module.exports = {
       timestamp: Date.now(),
     };
 
-    // ref.set(temperatures);
+    ref.set(temperatures);
 
     const response = {
       message: 'created',
