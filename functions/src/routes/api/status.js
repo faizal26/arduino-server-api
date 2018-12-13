@@ -10,6 +10,10 @@ router.route('/status/create')
 router.route('/status/active')
   .get(StatusController.find);
 
+router.route('/status')
+  .get(StatusController.findAll);
+
+
 // router.route('/users/:id')
   // .get(UserController.find)
   // .put(UserController.upsert);
