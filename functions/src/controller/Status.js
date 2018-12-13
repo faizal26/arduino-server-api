@@ -2,12 +2,6 @@ const admin = require("firebase-admin");
 
 module.exports = {
   findAll: (req, res) => {
-    // const ref = admin.database().ref('temperatures').limitToLast(10);
-    // ref.on('value', (snapshot) => {
-    //   const notes = snapshot.val();
-    //   const notesArray = Object.keys(notes).map(i => notes[i])
-    //   return res.json(notesArray);
-    // });
     status = {
       value: 'ok',
       active: true,
