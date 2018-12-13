@@ -1,6 +1,7 @@
 const admin = require("firebase-admin");
 
 const NotificationService = require('../services/Notifications');
+const UpdateStatusService = require('../services/UpdateStatus');
 
 module.exports = {
   findAll: (req, res) => {
@@ -19,11 +20,17 @@ module.exports = {
     // warning notification
     if (temperature > 30 && temperature < 33) {
       NotificationService.warning(arduinoId);
+      UpdateStatusService.warning();
     } 
     
     // danger notification
     if (temperature >= 33 ) {
       NotificationService.danger(arduinoId);
+      UpdateStatusService.danger();
+    }
+
+    if (temperature <= 30) {
+      UpdateStatusService.good();
     }
 
     const temperatures = {
@@ -33,7 +40,7 @@ module.exports = {
       timestamp: Date.now(),
     };
 
-    ref.set(temperatures);
+    // ref.set(temperatures);
 
     const response = {
       message: 'created',
