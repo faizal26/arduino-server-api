@@ -18,7 +18,7 @@ getDeviceToken = (arduinoId) => {
 
 module.exports = {
   warning: (arduinoId) => {
-    getDeviceToken(arduinoId).then((tokens) => {
+    getDeviceToken(arduinoId).then((deviceToken) => {
       const bodyObject = { 
         "to": deviceToken, // device token get from database
         "title": "Warning Notification",
@@ -42,7 +42,7 @@ module.exports = {
 
   danger: (arduinoId) => {
     getDeviceToken(arduinoId).then((deviceToken) => {
-      console.log('Token', deviceToken);
+      // console.log('Token', deviceToken);
       const bodyObject = { 
         "to": deviceToken,
         "title": "Danger Notification",
