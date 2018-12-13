@@ -26,7 +26,7 @@ app.get('/home', (req, res) => {
   res.send('Hello World');
 });
 app.use('/api', routesCoursesApi);
-app.use('/api', routesNotesApi);
+// app.use('/api', routesNotesApi);
 app.use('/api', routesTemperaturesApi);
 app.use('/api', routesUserApi);
 app.use('/api', routesStatusApi);
