@@ -2,7 +2,7 @@ const admin = require("firebase-admin");
 const request = require('request');
 const url = "https://exp.host/--/api/v2/push/send"; //third party push notification from expo
 
-// get arduino id
+// get arduino id or sensor from arduino
 // query to user collection then get device token
 getDeviceToken = (arduinoId) => {
   return new Promise((resolve) => {
