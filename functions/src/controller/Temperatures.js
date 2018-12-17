@@ -18,13 +18,13 @@ module.exports = {
     const { temperature, arduinoId } = req.body;
 
     // warning notification
-    if (temperature > 30 && temperature < 33) {
+    if (temperature > 45 && temperature < 50) {
       NotificationService.warning(arduinoId);
       UpdateStatusService.warning();
     } 
     
     // danger notification
-    if (temperature >= 33 ) {
+    if (temperature >= 50  ) {
       NotificationService.danger(arduinoId);
       UpdateStatusService.danger();
     }
